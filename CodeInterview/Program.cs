@@ -4,7 +4,7 @@ class Program
 {
     static void Main(string[] args)
     {
-        //Your program starts here...
-        Console.WriteLine("Hello world!");
+        EventManager eventManager = new EventManager();
+        eventManager.Run();
     }
 }
