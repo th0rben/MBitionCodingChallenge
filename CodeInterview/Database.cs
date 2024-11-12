@@ -20,9 +20,9 @@ public class Database()
     
     public void List()
     {
-        foreach (var eve in _events.Values)
+        foreach (var currentEvent in _events.Values)
         {
-            eve.PrintShort();
+            currentEvent.PrintShort();
         }
     }
 
@@ -46,17 +46,17 @@ public class Database()
         var id = TransformId(idString);
         if(!CheckId(id)) return;
 
-        var eve = _events[id];
+        var currentEvent = _events[id];
         
         var name = GetInput("Enter new Event Name (leave empty to keep current)", true);
         var location = GetInput("Enter new Event Location (leave empty to keep current)", true);
         var date = GetInput("Enter new Event Date (leave empty to keep current)", true);
         var description = GetInput("Enter new Event Description (leave empty to keep current)", true);
         
-        eve.Name = name != "" ? name: eve.Name;
-        eve.Location = location != "" ? location: eve.Location;
-        eve.Date = date != "" ? date: eve.Date;
-        eve.Description = description != "" ? description: eve.Description;
+        currentEvent.Name = name != "" ? name: currentEvent.Name;
+        currentEvent.Location = location != "" ? location: currentEvent.Location;
+        currentEvent.Date = date != "" ? date: currentEvent.Date;
+        currentEvent.Description = description != "" ? description: currentEvent.Description;
     }
 
     private string GetInput(string prompt, bool allowEmpty = false)
